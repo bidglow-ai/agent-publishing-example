@@ -1,0 +1,6 @@
+.env*
+*receipt*
+*secret*
+*state*
+node_modules/
+.DS_Store
