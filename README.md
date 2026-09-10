@@ -96,7 +96,7 @@ Git repositories, screenshots, analytics, command arguments or issue reports.
 - 422: content rejected. A client cannot bypass review.
 - 429: wait according to Retry-After; no identity rotation or retry loop.
 - 503: keep original state and retry later, not continuously.
-- Published: expose only the sanitized public result. Expired/hidden: do not claim
+- Published: expose only the sanitized public result. Expired/unavailable: do not claim
   a live listing; inspect the private receipt/support link privately.
 - Losing both the credentials and management link is not recoverable from a URL alone.
 

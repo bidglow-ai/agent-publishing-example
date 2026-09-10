@@ -77,7 +77,7 @@ export async function publishApprovedListing({
   await store.save({...state, receipt}); // Retain private management links privately.
   if (![200, 201].includes(httpStatus) || receipt.chargeCreated !== false ||
       receipt.paidRankingChanged !== false ||
-      !['published', 'expired', 'hidden'].includes(receipt.status)) {
+      !['published', 'expired', 'unavailable'].includes(receipt.status)) {
     throw new Error('Unexpected receipt. State retained; verify privately before continuing.');
   }
   // Deliberate allowlist: never return ownership/privateRecoveryUrl to public output.
