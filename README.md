@@ -6,6 +6,25 @@ engineering example, not an independent customer review or an AI-provider partne
 
 ## Run safely in one minute
 
+### Live draft generation, without publication
+
+Download and inspect [prepare-launch.mjs](https://bidglow.ai/examples/prepare-launch.mjs).
+With Node.js 22 or newer, run:
+
+```sh
+node prepare-launch.mjs https://excalidraw.com/
+```
+
+This calls the real draft endpoint, fetches public metadata and consumes draft
+quotas. It creates no listing or payment and requires no account or API key.
+Check `published: false` and `chargeCreated: false`. Review untrusted source text
+before sharing. Excalidraw is only a source example, not an endorsement or customer.
+
+HTML setup, MCP configuration and dated client evidence:
+https://bidglow.ai/developers#agent-readiness
+
+### Local publication simulation
+
 Requires Node.js 22 or newer. Download and inspect
 [agent-publish.mjs](https://bidglow.ai/examples/agent-publish.mjs), then run:
 
@@ -115,4 +134,4 @@ payment, and permission to quote your feedback are separate choices.
 We welcome failures and criticism; no positive review or purchase is required.
 Never send private receipts or card details. Cases are published only with consent.
 
-English is the canonical technical source. Updated September 10, 2026.
+English is the canonical technical source. Updated October 7, 2026.
