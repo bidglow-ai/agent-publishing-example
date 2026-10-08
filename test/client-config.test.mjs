@@ -75,6 +75,7 @@ test('guide retains safety checks, client-evidence limitations and primary sourc
   for (const text of [
     'published: false', 'chargeCreated: false', 'UNSUPPORTED_CLIENT',
     'not a server-side authorization boundary', 'have not independently established',
+    'does not restore free consumer access', 'Antigravity is a different client',
     'https://geminicli.com/docs/extensions/reference/',
     'https://geminicli.com/docs/tools/mcp-server/',
     'https://code.claude.com/docs/en/mcp',

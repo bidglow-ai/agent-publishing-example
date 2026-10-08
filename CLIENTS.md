@@ -42,6 +42,15 @@ any of the four clients. Do not retry permission/account failures in a loop.
 
 ## Gemini CLI: filtered extension
 
+**Account eligibility matters:** Google ended Gemini CLI access for consumer free
+and Google AI Pro/Ultra accounts on June 18, 2026, directing them to Antigravity.
+Standard/Enterprise and paid API-key access are separate. This extension is for
+eligible Gemini CLI users; it does not restore free consumer access. See Google's
+[transition notice](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/).
+Antigravity is a different client; its plugin installation is not verified here.
+For a no-provider-account first test, use the inspected draft-only Node example
+above. No paid API key or subscription was purchased for this integration.
+
 Inspect [gemini-extension.json](./gemini-extension.json) first. It contains only the
 remote server URL and the two draft tools; no keys, local commands, hooks, automatic
 approval or instruction/context file is supplied.
