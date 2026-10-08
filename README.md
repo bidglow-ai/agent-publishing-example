@@ -6,6 +6,11 @@ engineering example, not an independent customer review or an AI-provider partne
 
 ## Run safely in one minute
 
+Using Gemini CLI, Claude Code, Cursor or VS Code? Start with the
+[draft-first client setup](https://bidglow.ai/examples/CLIENTS.md), including
+the optional Gemini CLI extension. Configuration does not prove that a client
+account can execute tools; keep the documented approval and filtering boundaries.
+
 ### Live draft generation, without publication
 
 Download and inspect [prepare-launch.mjs](https://bidglow.ai/examples/prepare-launch.mjs).

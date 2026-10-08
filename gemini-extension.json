@@ -1,0 +1,11 @@
+{
+  "name": "bidglow-draft-launch",
+  "version": "1.0.0",
+  "description": "Prepare launch drafts from a public URL with BidGlow. No publication or payment tools are included.",
+  "mcpServers": {
+    "bidglow-draft": {
+      "httpUrl": "https://bidglow.ai/api/mcp",
+      "includeTools": ["capabilities", "prepare_launch"]
+    }
+  }
+}
