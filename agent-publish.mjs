@@ -17,9 +17,14 @@ async function request(origin, path, options = {}) {
   });
   if (!response.ok) {
     // Never log an untrusted response body: it may contain private receipt data.
-    const retryAfter = response.headers.get('retry-after');
-    throw new Error('HTTP ' + response.status + (retryAfter ? '; respect Retry-After' : '') +
+    const rawDelay = response.headers.get('retry-after');
+    const retryAfterSeconds = rawDelay && /^\d+$/.test(rawDelay) ? Number(rawDelay) : undefined;
+    const error = new Error('HTTP ' + response.status +
+      (Number.isSafeInteger(retryAfterSeconds) ? '; retry after ' + retryAfterSeconds + ' seconds' : '') +
       '. Retain the original state; do not rotate credentials or claim success.');
+    error.status = response.status;
+    if (Number.isSafeInteger(retryAfterSeconds)) error.retryAfterSeconds = retryAfterSeconds;
+    throw error;
   }
   return {httpStatus: response.status, value: await response.json()};
 }

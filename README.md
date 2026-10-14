@@ -7,31 +7,17 @@ engineering example, not an independent customer review or an AI-provider partne
 ## Run safely in one minute
 
 Using Gemini CLI, Claude Code, Cursor or VS Code? Start with the
-[draft-first client setup](https://bidglow.ai/examples/CLIENTS.md), including
+[client setup](./CLIENTS.md), including
 the optional Gemini CLI extension. Configuration does not prove that a client
 account can execute tools; keep the documented approval and filtering boundaries.
 
-### Live draft generation, without publication
-
-Download and inspect [prepare-launch.mjs](https://bidglow.ai/examples/prepare-launch.mjs).
-With Node.js 22 or newer, run:
-
-```sh
-node prepare-launch.mjs https://excalidraw.com/
-```
-
-This calls the real draft endpoint, fetches public metadata and consumes draft
-quotas. It creates no listing or payment and requires no account or API key.
-Check `published: false` and `chargeCreated: false`. Review untrusted source text
-before sharing. Excalidraw is only a source example, not an endorsement or customer.
-
-HTML setup, MCP configuration and dated client evidence:
+HTML setup, MCP configuration and client limitations:
 https://bidglow.ai/developers#agent-readiness
 
 ### Local publication simulation
 
 Requires Node.js 22 or newer. Download and inspect
-[agent-publish.mjs](https://bidglow.ai/examples/agent-publish.mjs), then run:
+[agent-publish.mjs](./agent-publish.mjs), then run:
 
 ```sh
 node agent-publish.mjs
@@ -131,12 +117,39 @@ An agent may separately request a non-charging quote with user permission.
 The customer must review and confirm every payment through Stripe.
 No saved card, background payment or automatic top-10 maintenance is enabled.
 
-## Try it independently
+## Ten voluntary testers welcome
 
-You can run the local demo without joining a study or contacting us.
-For a voluntary real-use pilot, contact admin@bidglow.ai. Participation, publication,
-payment, and permission to quote your feedback are separate choices.
-We welcome failures and criticism; no positive review or purchase is required.
-Never send private receipts or card details. Cases are published only with consent.
+We are inviting up to 10 volunteers who have their own public website, profile,
+business page or app and want to check the customer-owned AI publishing flow.
+You can run the isolated demo without joining a study or contacting us.
 
-English is the canonical technical source. Updated October 7, 2026.
+To volunteer, email [admin@bidglow.ai](mailto:admin@bidglow.ai) with the subject
+"BidGlow voluntary AI publishing test". Tell us which AI client you use and whether
+you want to try the local demo or discuss one real free listing. A public website
+URL is optional at this first step; do not send credentials, receipts or card details.
+
+We will confirm your interest first, then send the test steps privately. Emailing us
+is not approval to publish anything. Participation, a specific public listing,
+optional payment, and permission to quote feedback are separate choices. You may
+stop at any point. No purchase or positive review is required; failures and criticism
+are welcome. We do not promise visitors, sales, search rankings or AI recommendations.
+
+A synthetic demo is engineering evidence, not a real customer, testimonial or live
+publication. We will ask separately before publishing any identifiable case or quote.
+
+## Retired draft setup
+
+Draft generation was removed on October 8, 2026. There is no draft step before
+publication. The retained `prepare-launch.mjs` command now prints a retirement notice
+and exits without network requests, publication or payment; it is not a publishing
+shortcut. Previously installed `bidglow-draft-launch` extensions or `bidglow-draft`
+servers require a reviewed manual migration. See [client migration](./CLIENTS.md#review-existing-draft-connections-before-migrating).
+Previous permission to generate a draft never authorizes a real public listing.
+
+## Offline checks
+
+`node --test test/*.test.mjs` checks the public configuration, retired-command safety,
+receipt/approval boundaries and the isolated demo. It installs no AI configuration
+and makes no production requests. Passing does not certify a native AI client.
+
+English is the canonical technical source. Updated October 13, 2026.
