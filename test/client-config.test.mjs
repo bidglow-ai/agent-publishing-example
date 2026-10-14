@@ -65,7 +65,7 @@ test('active configuration advertises no draft tool and migration never transfer
 });
 
 test('client limitations and voluntary testing do not imply payment, independent customers or blanket consent', () => {
-  for (const text of ['UNSUPPORTED_CLIENT','Not logged in','approval policy rejected publish_free','Configuration is not a successful acceptance test','A client\'s approval denial is a stop','explicit approval to publish the exact public destination','private durable storage','Every payment requires the customer']) assert.ok(guide.includes(text),text);
+  for (const text of ['UNSUPPORTED_CLIENT','agent-client-status.json','native AI-client pass','Configuration is not a successful acceptance test','A client\'s approval denial is a stop','explicit approval to publish the exact public destination','private durable storage','Every payment requires the customer']) assert.ok(guide.includes(text),text);
   for (const text of ['up to 10 volunteers','admin@bidglow.ai','confirm your interest first','send the test steps privately','not approval to publish anything','No purchase or positive review','do not promise visitors','not a real customer','stop at any point']) assert.ok(readme.includes(text),text);
 });
 

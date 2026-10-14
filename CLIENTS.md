@@ -10,22 +10,78 @@ Client access and billing belong to the provider; this setup does not grant them
 The Gemini CLI account tested on October 3 returned UNSUPPORTED_CLIENT before
 execution. Configuration is not a successful acceptance test or AI endorsement.
 
-## Latest engineering checks — October 8, 2026
+## Dated evidence, not an installation guarantee
 
-| Client or test | Observed outcome | Not established |
-| --- | --- | --- |
-| Codex CLI 0.159.2, authenticated | Native MCP initialization, tool discovery and capabilities succeeded against an isolated local fixture. Its approval policy rejected publish_free before reaching the server. | Native publication, replay and subsequent quote were not completed. |
-| Claude Code 2.1.246 | Not logged in; no native tool execution. | Claude publication is unverified. |
-| Gemini CLI 0.57.0 | October 3 account returned UNSUPPORTED_CLIENT; not rerun as a successful client. | Gemini publication is unverified. |
-| Actual application routes + MCP SDK regression tests | Synthetic publication, identical replay, changed-request rejection and a non-charging quote passed against isolated SQLite. | This is protocol evidence, not native-model acceptance, production recovery or a customer testimonial. |
+The canonical [client evidence record](https://bidglow.ai/agent-client-status.json)
+contains the client, version, actual check date, outcome and native acceptance
+status. The [developer page](https://bidglow.ai/developers#agent-readiness) renders
+that same record in the selected language. A guide's update date is not a new test
+date. A protocol/SDK pass must never be described as a native AI-client pass.
 
-The Codex run created zero listings, receipts or bids. All checks above made zero
-production publication/payment requests. A client's approval denial is a stop, not
-an invitation to bypass its controls. For an interactive acceptance, the account
+A client's approval denial is a stop, not an invitation to bypass its controls.
+For an interactive acceptance, the account
 must support MCP, private durable storage and the normal user confirmation for the
 specific test; keep that confirmation enabled. Do not mark a run passed until the
 public result, identical replay, private receipt retention and zero-charge result
 have all been checked.
+
+## Test without buying another AI subscription
+
+- The downloadable loopback demo needs Node.js, not an AI subscription, API key or
+  payment card. It tests the HTTP contract, not a particular model.
+- If you already have Codex access, use its existing account and included usage for
+  a native test. Provider limits still apply; this is not a promise of unlimited
+  or free provider usage. Do not switch to a billable API key to finish a test.
+- Claude Code requires a supported subscription, organization or billed provider
+  route. An existing eligible subscription can cover included Code usage; a free
+  Claude browser login does not establish Code entitlement. Do not purchase a plan,
+  enable extra usage or configure an API key just to run this example.
+- Claude's free web plan currently supports one custom remote connector, subject
+  to the provider's current limits. This is a separate client, not free Claude Code.
+  Remote connectors reach the server from Anthropic's cloud, so a local 127.0.0.1
+  fixture will not work. A cloud publication test requires an isolated public HTTPS
+  test service and verified private durable receipt storage first. Until then,
+  limit this path to capabilities and non-charging quotes; do not publish.
+
+Official references (checked October 14, 2026):
+- https://code.claude.com/docs/en/authentication
+- https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp
+
+## Client-specific connection instructions
+
+These commands change client configuration; review them and check for an existing
+BidGlow connection first. They do not authorize publication or certify compatibility.
+The production endpoint below is NOT the isolated test endpoint.
+
+### Codex CLI
+
+```sh
+codex mcp add bidglow --url https://bidglow.ai/api/mcp
+```
+
+Keep ordinary tool confirmations. To remove this named connection:
+
+```sh
+codex mcp remove bidglow
+```
+
+### Claude Code
+
+```sh
+claude mcp add --transport http --scope local bidglow https://bidglow.ai/api/mcp
+```
+
+The local scope limits the connection to the current project. Use `/mcp` to inspect
+tools and connection state. To remove it from the same project:
+
+```sh
+claude mcp remove --scope local bidglow
+```
+
+Official reference: https://code.claude.com/docs/en/mcp
+
+Connecting or disconnecting does not publish or delete a listing. On every client,
+start with capabilities and stop if tools, permissions or private storage are missing.
 
 ## Review existing draft connections before migrating
 
@@ -138,5 +194,4 @@ is supplied by this repository.
 For a test with no production writes, download and run the isolated example:
 https://bidglow.ai/examples/README.md
 
-English is canonical. Documentation synchronized October 13, 2026.
-The dated engineering observations above remain October 8 results, not new tests.
+English is canonical. Updated October 14, 2026.

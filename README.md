@@ -7,7 +7,7 @@ engineering example, not an independent customer review or an AI-provider partne
 ## Run safely in one minute
 
 Using Gemini CLI, Claude Code, Cursor or VS Code? Start with the
-[client setup](./CLIENTS.md), including
+[client setup](https://bidglow.ai/examples/CLIENTS.md), including
 the optional Gemini CLI extension. Configuration does not prove that a client
 account can execute tools; keep the documented approval and filtering boundaries.
 
@@ -17,7 +17,7 @@ https://bidglow.ai/developers#agent-readiness
 ### Local publication simulation
 
 Requires Node.js 22 or newer. Download and inspect
-[agent-publish.mjs](./agent-publish.mjs), then run:
+[agent-publish.mjs](https://bidglow.ai/examples/agent-publish.mjs), then run:
 
 ```sh
 node agent-publish.mjs
@@ -143,13 +143,14 @@ Draft generation was removed on October 8, 2026. There is no draft step before
 publication. The retained `prepare-launch.mjs` command now prints a retirement notice
 and exits without network requests, publication or payment; it is not a publishing
 shortcut. Previously installed `bidglow-draft-launch` extensions or `bidglow-draft`
-servers require a reviewed manual migration. See [client migration](./CLIENTS.md#review-existing-draft-connections-before-migrating).
+servers require a reviewed manual migration. See [client migration](https://bidglow.ai/examples/CLIENTS.md#review-existing-draft-connections-before-migrating).
 Previous permission to generate a draft never authorizes a real public listing.
 
 ## Offline checks
 
+In the [public example repository](https://github.com/bidglow-ai/agent-publishing-example),
 `node --test test/*.test.mjs` checks the public configuration, retired-command safety,
 receipt/approval boundaries and the isolated demo. It installs no AI configuration
 and makes no production requests. Passing does not certify a native AI client.
 
-English is the canonical technical source. Updated October 13, 2026.
+English is the canonical technical source. Updated October 14, 2026.
