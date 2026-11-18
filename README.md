@@ -1,7 +1,7 @@
 # Publish through your own AI: BidGlow reference example
 
 For personal profiles, company websites, services, portfolios and products.
-Maintained by BidGlow / Blessbridge Global Trading LLC. This is a first-party
+Maintained by [BidGlow](https://bidglow.ai/) / Blessbridge Global Trading LLC. This is a first-party
 engineering example, not an independent customer review or an AI-provider partnership.
 
 ## Run safely in one minute
