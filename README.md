@@ -114,8 +114,9 @@ Git repositories, screenshots, analytics, command arguments or issue reports.
 
 This example contains no quote, checkout, payment or automatic-bidding code.
 An agent may separately request a non-charging quote with user permission.
-The customer must review and confirm every payment through Stripe.
-No saved card, background payment or automatic top-10 maintenance is enabled.
+Stripe Checkout requires customer confirmation. Separately, the current BidGlow merchant API can prepare a Base mainnet USDC order for an authorized external wallet through HTTP or MCP. This free-publication example does not implement that payment workflow. See the [current AI integration guide](https://bidglow.ai/developers) and [live capabilities](https://bidglow.ai/api/v1/agent/capabilities).
+
+First paid placement accepts destination, targetBid and maxAmountCents in one request; no existing management key or pre-payment storage handshake is needed. Subsequent increases require management authority. The agent still needs an authorized wallet with sufficient funds and network fees. One-call preparation and an independent MCP client were verified November 19, 2026; the full mainnet payment-to-ranking flow has not passed live acceptance. No universal client compatibility, saved-card charging or automatic top-10 maintenance is claimed.
 
 ## Ten voluntary testers welcome
 
@@ -153,4 +154,4 @@ In the [public example repository](https://github.com/bidglow-ai/agent-publishin
 receipt/approval boundaries and the isolated demo. It installs no AI configuration
 and makes no production requests. Passing does not certify a native AI client.
 
-English is the canonical technical source. Updated October 14, 2026.
+English is the canonical technical source. Brand and payment-documentation consistency updated November 20, 2026; the free-publication example code is unchanged.
